@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Net;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
@@ -19,7 +20,9 @@ namespace client
 
         public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
             WebHost.CreateDefaultBuilder(args)
-                .UseUrls("http://10.192.202.167:8081")
+                // .UseKestrel(options => {
+                //     options.Listen(IPAddress.Loopback, 8080);
+                // })
                 .UseStartup<Startup>();
     }
 }

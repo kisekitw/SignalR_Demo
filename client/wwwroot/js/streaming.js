@@ -1,7 +1,7 @@
 "use strict";
 
 var connection = new signalR.HubConnectionBuilder()
-                    .withUrl("http://10.192.202.167:8080/streamHub")
+                    .withUrl("http://10.192.200.174:8081/streamHub")
                     .build();
 console.log(connection);
 connection.on("ReceiveStream", function (ip, port) {

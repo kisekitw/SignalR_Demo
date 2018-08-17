@@ -37,7 +37,7 @@ namespace client
             // builder => 
             // {
             //     builder.AllowAnyMethod().AllowAnyHeader()
-            //         .WithOrigins("https://10.192.202.167:8080")
+            //         .WithOrigins("https://10.192.:8080")
             //         .AllowCredentials();
             // }));
             // services.AddSignalR();
