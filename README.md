@@ -15,6 +15,8 @@ Asp.net core 2.1 SignalR on Respberry Pi 3+ deploy by Docker.
 # 於本機建立裝載 SignalR 用戶端和伺服器的 ASP.NET Core 專案
 1. 建立signalR_Demo，並在其中分別建立server、client資料夾
 2. 進入server資料夾，在[整合式終端機]執行下列指令
-  ...dotnet new webapp
+  ```dotnet cli
+  dotnet new webapp
+  ```
 3. 
 
