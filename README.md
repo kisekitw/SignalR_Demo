@@ -75,13 +75,13 @@ Asp.net core 2.1 SignalR on Respberry Pi 3+ deploy by Docker.
   npm init -y
   npm install @aspnet/signalr
   ```
-3. 在wwwroot/lib下建立"signalr"資料夾，將ode_modules\@aspnet\signalr\dist\browser下的signalr.js複製到該資料夾下
+3. 在wwwroot/lib下建立"signalr"資料夾，將node_modules\@aspnet\signalr\dist\browser下的signalr.js複製到該資料夾下
 4. 新增streaming.js至wwwroot/js/，程式碼如下：
   ```javascript
   "use strict";
 // 建立SignalR連線
 var connection = new signalR.HubConnectionBuilder()
-                    // 要改成動態的
+                    // 要改成動態傳入ip、port參數
                     .withUrl("http://10.192.200.174:8081/streamHub")
                     .build();
 console.log(connection);
@@ -128,7 +128,8 @@ document.getElementById("sendButton").addEventListener("click", function (event)
   WORKDIR /app
   COPY --from=build-env /app/out ./
   
-  # 專案名稱為client或server
+  # 專案名稱為client、server，或其他專案名稱
+  # Respberry上需用CMD，不可用Endpoint，否則找不到執行路徑
   CMD ["dotnet", "[專案名稱].dll"]
   ```
 3.
